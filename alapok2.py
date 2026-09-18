@@ -56,3 +56,52 @@ for szam in szamok:
         paros_osszeg += szam
 
 print(f"A páros számok átaga: {paros_osszeg/paros_db:.2f}")
+
+# Eldöntés
+# Lehetséges válaszok: Van, nincs, mind ilyen, egy ilyen sincs
+# Visszatérési érték az egy logikai érték
+# Pl.: Van e páros száma listában?, A listában minden szám páros?, ...
+# Be kell e járni a listát? --> nem
+#Van e páros szám a listában?
+
+szamok = [5, 7, 9, 6]
+i = 0
+while i < len(szamok)  and not (szamok[i] % 2 == 0):
+    i += 1
+
+van = i < len(szamok)
+print(f"{"Van" if van else "Nincs"} Páros szám a listában.")
+
+#Minden szám páratlan e?
+szamok = [5, 7, 6, 9]
+
+i = 0
+while i < len(szamok) and not (szamok[i] % 2 == 0):
+    i += 1
+
+van = i < len(szamok)
+print(f"{"Minden szám" if not van else "Nem minden szám"} páratlan.")
+
+# Eldöntés v2
+# Van e páros szám a listában?
+
+van = False
+for szam in szamok:
+    if szam % 2 == 0:
+        van = True
+        break
+
+print(f"{"Van" if van else "Nincs"} Páros szám a listában.")
+
+# Kiválasztás tétele
+# Ha biztosan tudjuk hogy van olyan elem akkor adjuk meg a sorszámot.
+# Visszatérési érték egy sorszám ami a adott tulajdonságú elem a listában.
+# Pl.: Hanyadik ember a legmagasabb a listában?
+# Hanyadik elem az első páros szám a listában?
+
+szamok = [5, 7, 6, 9]
+i = 0
+while not (szamok[i] %2 == 0):
+    i += 1
+
+print(f"Az első páros elem indexe a(z) {i}, értéke: {szamok[i]}.")
